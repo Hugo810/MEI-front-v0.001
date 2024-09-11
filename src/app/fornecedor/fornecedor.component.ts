@@ -4,6 +4,8 @@ import { Fornecedor } from '../modelo/Fornecedor';
 import { Router } from '@angular/router';
 import { ConsultaCepService } from '../servico/consulta-cep.service';
 import { EnderecoDados } from 'src/Interfaces/EnderecoDados';
+import { CnpjDados } from 'src/Interfaces/CnpjDados';
+import { ConsultaCnpjService } from '../servico/consultacnpjservice.service';
 
 @Component({
   selector: 'app-fornecedor',
@@ -18,7 +20,8 @@ export class FornecedorComponent {
   fornecedores: Fornecedor[] = [];
 
   constructor(private servico: FornecedorService, private router :Router,
-    private consultaCepService: ConsultaCepService
+    private consultaCepService: ConsultaCepService,
+    private consultaCnpjService: ConsultaCnpjService 
   ) {}
 
   onKeyDown(event: KeyboardEvent): void {
@@ -204,6 +207,36 @@ export class FornecedorComponent {
     this.fornecedor.endereco.localidade = dados.localidade || '';
     this.fornecedor.endereco.uf = dados.uf || '';
     this.fornecedor.endereco.cep = dados.cep || '';
+  }
+  consultaCNPJ(cnpj: string): void {
+    // Verifica se o CNPJ tem 14 dígitos
+    if (cnpj.length === 14) {
+      this.consultaCnpjService.consultaCNPJ(cnpj).subscribe(
+        (dados: CnpjDados) => {
+          this.populaDadosCnpj(dados); // Preenche os dados da empresa
+        },
+        (error) => {
+          console.error('Erro ao consultar CNPJ:', error);
+          alert('Erro ao consultar CNPJ.');
+        }
+      );
+    } else {
+      alert('CNPJ inválido.');
+    }
+  }
+  
+  // Função para preencher os dados da empresa no formulário
+  populaDadosCnpj(dados: CnpjDados): void {
+    this.fornecedor.razaoSocial = dados.razao_social || '';
+    //this.fornecedor.nomeFantasia = dados.nome_fantasia || '';
+    this.fornecedor.endereco.logradouro = dados.logradouro || '';
+    this.fornecedor.endereco.numero = dados.numero || '';
+    this.fornecedor.endereco.bairro = dados.bairro || '';
+    //this.fornecedor.endereco.cidade = dados.municipio || '';
+    this.fornecedor.endereco.uf = dados.uf || '';
+    this.fornecedor.endereco.cep = dados.cep || '';
+    //this.fornecedor.telefone = dados.telefone || '';
+    this.fornecedor.email = dados.email || '';
   }
 }
 

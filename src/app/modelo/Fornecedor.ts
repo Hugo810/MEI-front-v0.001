@@ -4,7 +4,7 @@ export class Fornecedor{
      
     codigo: number=0;
     razaoSocial:String  = "";
-    cnpj:String  = "";
+    cnpj:string  = "";
     telefone1:String = "";
     telefone2:String  = "";
     nomeContato:String = "";

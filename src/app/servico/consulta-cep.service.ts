@@ -13,6 +13,7 @@ import { EnderecoDados } from 'src/Interfaces/EnderecoDados';
 })
 export class ConsultaCepService {
   private baseUrl = 'https://viacep.com.br/ws'; // URL base para consulta de CEP
+  
 
   constructor(private http: HttpClient) {}
 

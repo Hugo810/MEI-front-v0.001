@@ -127,21 +127,25 @@
                 </div>
 
                 <!-- Campo CNPJ -->
-                <div class="form-row">
-                    <div class="form-col">
-                        <label for="cnpj">CNPJ</label>
-                        <div class="input-group">
-                            <input type="text" id="cnpj" class="form-control cnpj-input" name="cnpj"
-                                [(ngModel)]="fornecedor.cnpj" (input)="aplicarMascaraCNPJ($event)"
-                                (keydown)="onKeyDown($event)" maxlength="18">
-                            <div class="input-group-append">
-                                <button class="btn btn-search" type="button" (click)="buscarPorCNPJ()">
-                                    <i class="fas fa-search"></i> Buscar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="form-row">
+    <div class="form-col">
+        <label for="cnpj">CNPJ</label>
+        <div class="input-group">
+            <!-- Campo de entrada para o CNPJ com máscara -->
+            <input type="text" id="cnpj" class="form-control cnpj-input" name="cnpj"
+                [(ngModel)]="fornecedor.cnpj" (input)="aplicarMascaraCNPJ($event)"
+                (keydown)="onKeyDown($event)" maxlength="18">
+
+            <!-- Botão para realizar a busca pelo CNPJ -->
+            <div class="input-group-append">
+                <button class="btn btn-search" type="button" (click)="consultaCNPJ(fornecedor.cnpj)">
+                    <i class="fas fa-search"></i> Buscar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
                 <!-- Restante do formulário -->
 <div class="form-row">
