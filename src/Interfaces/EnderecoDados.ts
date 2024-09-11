@@ -4,7 +4,7 @@ export interface EnderecoDados {
     logradouro: string;
     numero: string;
     bairro: string;
-    cidade: string;
+    localidade: string;
     uf: string;
     cep: string;
     complemento: string;

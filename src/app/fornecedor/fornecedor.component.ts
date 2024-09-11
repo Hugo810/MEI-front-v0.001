@@ -201,7 +201,7 @@ export class FornecedorComponent {
     this.fornecedor.endereco.logradouro = dados.logradouro || '';
     this.fornecedor.endereco.numero = ''; // Ou outro valor padrão
     this.fornecedor.endereco.bairro = dados.bairro || '';
-    this.fornecedor.endereco.cidade = dados.cidade || '';
+    this.fornecedor.endereco.localidade = dados.localidade || '';
     this.fornecedor.endereco.uf = dados.uf || '';
     this.fornecedor.endereco.cep = dados.cep || '';
   }

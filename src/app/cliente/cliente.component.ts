@@ -310,7 +310,7 @@ export class ClienteComponent {
     this.cliente.endereco.logradouro = dados.logradouro || '';
     this.cliente.endereco.numero = ''; // Ou outro valor padrão
     this.cliente.endereco.bairro = dados.bairro || '';
-    this.cliente.endereco.cidade = dados.cidade || '';
+    this.cliente.endereco.localidade = dados.localidade || '';
     this.cliente.endereco.uf = dados.uf || '';
     this.cliente.endereco.cep = dados.cep || '';
   }

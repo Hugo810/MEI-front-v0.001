@@ -226,9 +226,9 @@
 
 <div class="form-row">
     <div class="form-col">
-        <label for="cidade">Cidade</label>
-        <input type="text" id="cidade" class="form-control uppercase-input" name="cidade"
-            [(ngModel)]="cliente.endereco.cidade" (input)="toUpperCase($event)">
+        <label for="localidade">Cidade</label>
+        <input type="text" id="localidade" class="form-control uppercase-input" name="localidade"
+            [(ngModel)]="cliente.endereco.localidade" (input)="toUpperCase($event)">
     </div>
     <div class="form-col">
         <label for="estado">Estado</label>
@@ -326,7 +326,7 @@
                     </div>
                     <div class="detalhes-row">
                         <div class="detalhes-col">
-                            <label>Cidade:</label> {{ cliente.endereco.cidade }}
+                            <label>Cidade:</label> {{ cliente.endereco.localidade }}
                         </div>
                         <div class="detalhes-col">
                             <label>Estado:</label> {{ cliente.endereco.uf }}
