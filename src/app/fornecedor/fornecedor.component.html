@@ -199,9 +199,15 @@
     </div>
     <div class="form-col">
         <label for="cep">CEP</label>
-        <input type="text" id="cep" class="form-control uppercase-input" name="cep"
-            [(ngModel)]="fornecedor.endereco.cep" (input)="toUpperCase($event)">
-    </div>
+        <div class="input-group">
+            <input type="text" id="cep" class="form-control uppercase-input" name="cep"
+                [(ngModel)]="fornecedor.endereco.cep" (input)="toUpperCase($event)">
+                <button class="btn btn-search" type="button" (click)="consultaCEP(fornecedor.endereco.cep ?? '')">
+                    <i class="fas fa-search"></i> Buscar
+                </button>
+                
+            </div>
+        </div>
 </div>
 
 

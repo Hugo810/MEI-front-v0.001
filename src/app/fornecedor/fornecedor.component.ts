@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FornecedorService } from '../servico/fornecedor.service';
 import { Fornecedor } from '../modelo/Fornecedor';
 import { Router } from '@angular/router';
+import { ConsultaCepService } from '../servico/consulta-cep.service';
+import { EnderecoDados } from 'src/Interfaces/EnderecoDados';
 
 @Component({
   selector: 'app-fornecedor',
@@ -15,7 +17,9 @@ export class FornecedorComponent {
   tabela: boolean = true;
   fornecedores: Fornecedor[] = [];
 
-  constructor(private servico: FornecedorService, private router :Router) {}
+  constructor(private servico: FornecedorService, private router :Router,
+    private consultaCepService: ConsultaCepService
+  ) {}
 
   onKeyDown(event: KeyboardEvent): void {
     if (event.key === 'Enter') {
@@ -174,6 +178,32 @@ export class FornecedorComponent {
   }
   toUpperCase(event: any) {
     event.target.value = event.target.value.toUpperCase();
+  }
+
+  consultaCEP(cep: string): void {
+    if (cep.length === 8) {
+      this.consultaCepService.consultaCEP(cep).subscribe(
+        (dados: EnderecoDados) => {
+          this.populaDadosEndereco(dados);
+        },
+        (error) => {
+          console.error('Erro ao consultar CEP:', error);
+          alert('Erro ao consultar CEP.');
+        }
+      );
+    } else {
+      alert('CEP inválido.');
+    }
+  }
+
+  // Função para preencher os dados do endereço
+  populaDadosEndereco(dados: EnderecoDados): void {
+    this.fornecedor.endereco.logradouro = dados.logradouro || '';
+    this.fornecedor.endereco.numero = ''; // Ou outro valor padrão
+    this.fornecedor.endereco.bairro = dados.bairro || '';
+    this.fornecedor.endereco.cidade = dados.cidade || '';
+    this.fornecedor.endereco.uf = dados.uf || '';
+    this.fornecedor.endereco.cep = dados.cep || '';
   }
 }
 
