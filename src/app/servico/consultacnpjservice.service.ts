@@ -10,7 +10,7 @@ import { CnpjDados } from 'src/Interfaces/CnpjDados';
   providedIn: 'root'
 })
 export class ConsultaCnpjService {
-  private baseUrl = 'https://www.receitaws.com.br/v1/cnpj/{CNPJ}';
+  private baseUrl = 'https://publica.cnpj.ws/cnpj';
 
   constructor(private http: HttpClient) {}
 

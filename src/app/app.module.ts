@@ -7,22 +7,22 @@ import { ClienteComponent } from './cliente/cliente.component';
 import { FornecedorComponent } from './fornecedor/fornecedor.component';
 import { AppRoutingModule } from './app-routing.module';
 import { InicioComponent } from './inicio/inicio.component';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
     AppComponent,
-   ClienteComponent,
-   FornecedorComponent,
-   InicioComponent
+    ClienteComponent,
+    FornecedorComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [provideNgxMask()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -34,8 +34,6 @@ export class ClienteService {
     return this.http.get<Cliente>(`${this.url}/cnpj/${cnpj}`);
   }
   
-
-
    //Metodo para editar clientes
     editar(id: number, obj: Cliente): Observable<Cliente> {
       return this.http.put<Cliente>(`${this.url}/${id}`, obj);
@@ -44,6 +42,4 @@ export class ClienteService {
       return this.http.delete<void>(this.url + '/'+id);
 
     }
-    
-
 }
