@@ -8,13 +8,15 @@ import { FornecedorComponent } from './fornecedor/fornecedor.component';
 import { AppRoutingModule } from './app-routing.module';
 import { InicioComponent } from './inicio/inicio.component';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { AgendasComponent } from './agendas/agendas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClienteComponent,
     FornecedorComponent,
-    InicioComponent
+    InicioComponent,
+    AgendasComponent
   ],
   imports: [
     BrowserModule,

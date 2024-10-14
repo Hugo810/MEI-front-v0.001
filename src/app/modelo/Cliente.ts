@@ -1,3 +1,4 @@
+import { Endereco } from "./Endereco";
 export class Cliente {
     codigo?: number;
     nome: string = '';
@@ -8,14 +9,17 @@ export class Cliente {
     telefoneComercial?: string;
     telefoneCelular?: string;
     email?: string;
+    
     endereco: {
+      codigo?:number;
       logradouro?: string;
       numero?: string;
       bairro?: string;
       localidade?: string;
       uf?: string;
       cep?: string;
+      complemento?:string;
     } = {};
-    mostrarDetalhes: boolean = false; // Adicionado para controlar a visibilidade dos detalhes
+    mostrarDetalhes?: boolean; // Adicionado para controlar a visibilidade dos detalhes
   }
   

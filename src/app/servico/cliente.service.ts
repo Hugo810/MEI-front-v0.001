@@ -42,4 +42,9 @@ export class ClienteService {
       return this.http.delete<void>(this.url + '/'+id);
 
     }
+
+    buscarPorIdentificacao(identificacao: string) {
+      return this.http.get<Cliente>(`/api/clientes/identificacao/${identificacao}`);
+    }
+    
 }
