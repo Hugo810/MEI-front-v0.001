@@ -11,11 +11,11 @@ import { EnderecoDados } from 'src/Interfaces/EnderecoDados';
   styleUrls: ['./cliente.component.css']
 })
 export class ClienteComponent {
-  cliente: Cliente = new Cliente(); // Inicializando o cliente com endereço
+  cliente: Cliente = new Cliente(); 
   btnCadastro: boolean = true;
   tabela: boolean = true;
   clientes: Cliente[] = [];
-  tipoIdentificacao: string = 'cpf'; // Tipo padrão é CPF
+  tipoIdentificacao: string = 'cpf'; 
 
   constructor(private servico: ClienteService, private router: Router,
     private consultaCepService: ConsultaCepService
