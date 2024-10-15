@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AgendaService } from '../agendas.service';
 import { Agenda } from '../modelo/Agendas';
-import { ClienteService } from '../servico/cliente.service';
+import { ClienteService } from '../servicos/cliente.service';
 import { Cliente } from '../modelo/Cliente';
 import { Endereco } from '../modelo/Endereco';
 import { jsPDF } from 'jspdf';

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Cliente } from '../modelo/Cliente';
-import { ClienteService } from '../servico/cliente.service';
+import { ClienteService } from '../servicos/cliente.service';
 import { Router } from '@angular/router';
-import { ConsultaCepService } from '../servico/consulta-cep.service';
+import { ConsultaCepService } from '../servicos/consulta-cep.service';
 import { EnderecoDados } from 'src/Interfaces/EnderecoDados';
 
 @Component({

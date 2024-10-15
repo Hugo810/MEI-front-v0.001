@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { FornecedorService } from '../servico/fornecedor.service';
+import { FornecedorService } from '../servicos/fornecedor.service';
 import { Fornecedor } from '../modelo/Fornecedor';
 import { Router } from '@angular/router';
-import { ConsultaCepService } from '../servico/consulta-cep.service';
+import { ConsultaCepService } from '../servicos/consulta-cep.service';
 import { EnderecoDados } from 'src/Interfaces/EnderecoDados';
 import { CnpjDados } from 'src/Interfaces/CnpjDados';
-import { ConsultaCnpjService } from '../servico/consultacnpjservice.service';
+import { ConsultaCnpjService } from '../servicos/consultacnpjservice.service';
 
 @Component({
   selector: 'app-fornecedor',
